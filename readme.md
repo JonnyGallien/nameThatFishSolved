@@ -58,3 +58,4 @@ To get this project setup, you should:
 - [ ] Form must reset after submitting
 - [ ] Page must NOT reload after submitting
 - [ ] ClassApp Code and FunctionalApp Code should be treated as seperate apps as far as state goes
+# nameThatFishSolved
