@@ -1,25 +1,24 @@
-import { useEffect, useState } from "react";
-import "./styles/score-board.css";
+import { useEffect, useState } from 'react'
+import './styles/score-board.css'
 //  Where the score is presented
 
+const initialAnswers = ['trout', 'salmon', 'tuna', 'shark']
 
-const initialAnswers = ["trout", "salmon", "tuna", "shark"];
-
-interface TCorrectIncorrectCount  {
-  correct: number,
-  incorrect: number,
+interface TCorrectIncorrectCount {
+  correct: number
+  incorrect: number
 }
 
 export function FunctionalScoreBoard(props: TCorrectIncorrectCount) {
   const [answersLeft, setAnswersLeft] = useState<string[]>(initialAnswers)
-  const { correct, incorrect } = props;
-  
+  const { correct, incorrect } = props
+
   useEffect(() => {
-    const totalToRemove = correct + incorrect;
+    const totalToRemove = correct + incorrect
     if (totalToRemove > 0) {
-      setAnswersLeft(prevAnswersLeft => prevAnswersLeft.slice(1));
+      setAnswersLeft((prevAnswersLeft) => prevAnswersLeft.slice(1))
     }
-  }, [correct, incorrect]);
+  }, [correct, incorrect])
 
   return (
     <div id="score-board">
@@ -33,5 +32,5 @@ export function FunctionalScoreBoard(props: TCorrectIncorrectCount) {
       </div>
       <div>Correct ✅: {correct}</div>
     </div>
-  );
+  )
 }
