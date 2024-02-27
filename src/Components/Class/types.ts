@@ -1,5 +1,4 @@
 export type TClassApp = {
-  incorrectCount: number,
-  correctCount: number,
+  incorrectCount: number
+  correctCount: number
 }
-

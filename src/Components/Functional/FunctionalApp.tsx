@@ -1,46 +1,31 @@
-import { FunctionalGameBoard } from "./FunctionalGameBoard";
-import { FunctionalScoreBoard } from "./FunctionalScoreBoard";
-import { FunctionalFinalScore } from "./FunctionalFinalScore";
-import { useState } from "react";
-
+import { FunctionalGameBoard } from './FunctionalGameBoard'
+import { FunctionalScoreBoard } from './FunctionalScoreBoard'
+import { FunctionalFinalScore } from './FunctionalFinalScore'
+import { useState } from 'react'
 
 export function FunctionalApp() {
-  const [correct, setCorrect] = useState<number>(0);
-  const [incorrect, setIncorrect] = useState<number>(0);
+  const [correct, setCorrect] = useState<number>(0)
+  const [incorrect, setIncorrect] = useState<number>(0)
 
   const handleCorrectGuess = () => {
-    setCorrect(prevCorrect => prevCorrect + 1);
-  };
+    setCorrect((prevCorrect) => prevCorrect + 1)
+  }
 
   const handleIncorrectGuess = () => {
-    setIncorrect(prevIncorrect => prevIncorrect + 1);
-  };
+    setIncorrect((prevIncorrect) => prevIncorrect + 1)
+  }
 
-  const gameOn = 
+  const gameOn = (
     <>
-      <FunctionalScoreBoard 
-        correct={correct} 
-        incorrect={incorrect}
-      />
+      <FunctionalScoreBoard correct={correct} incorrect={incorrect} />
       <FunctionalGameBoard
         handleCorrectGuess={handleCorrectGuess}
         handleIncorrectGuess={handleIncorrectGuess}
       />
-    </>;
-    
-  const finalScores = 
-    <FunctionalFinalScore 
-      correct={correct}
-      incorrect={incorrect}
-    />;
-
-  return (
-    <>
-      {
-        correct + incorrect < 4
-        ? gameOn
-        : finalScores
-      }
     </>
-  );
+  )
+
+  const finalScores = <FunctionalFinalScore correct={correct} />
+
+  return <>{correct + incorrect < 4 ? gameOn : finalScores}</>
 }

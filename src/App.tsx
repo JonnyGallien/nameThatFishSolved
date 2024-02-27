@@ -1,7 +1,6 @@
-import React from 'react';
-import "./App.css";
-import { ClassApp } from "./Components/Class/ClassApp";
-import { FunctionalApp } from "./Components/Functional/FunctionalApp";
+import './App.css'
+import { ClassApp } from './Components/Class/ClassApp'
+import { FunctionalApp } from './Components/Functional/FunctionalApp'
 
 function App() {
   return (
@@ -18,7 +17,7 @@ function App() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
